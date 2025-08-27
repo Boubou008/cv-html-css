@@ -1,0 +1,273 @@
+/* Styles généraux de la page */
+body{
+  font-family: 'Raleway', Arial, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+/* Raleway Regular (400) */
+@font-face{
+  font-family: 'Raleway';
+  src: local('Raleway Regular'), 
+       url('../fonts/Raleway/Raleway-Regular.woff2') format('woff2'),
+       url('../fonts/Raleway/Raleway-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Raleway Bold (700) */
+@font-face{
+  font-family: 'Raleway';
+  src: local('Raleway Bold'), 
+       url('../fonts/Raleway/Raleway-Bold.woff2') format('woff2'),
+       url('../fonts/Raleway/Raleway-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1, h2, h3{
+  font-family: 'Lato', sans-serif;
+}
+
+.container{
+  max-width: 1160px;
+  margin: 20px auto;
+  background: #fff;
+}
+
+/* En-tête avec photo, nom et fonction */
+.header{
+  background: rgb(23, 171, 179);
+  color: #fff;
+  padding: 30px 30px 30px 180px;
+  text-align: center;
+  position: relative;
+}
+
+.profil-photo img{
+  margin-left: 40px;
+  width: 120px;
+  height: 120px;         
+  border-radius: 50%;       
+  cursor: zoom-in;          
+}
+
+/* Effet zoom léger au survol */
+.profil-photo img:hover{
+  transform: scale(1.05);   
+}
+
+/* Photo de profil circulaire */
+.photo{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* Titre et sous-titre du CV */
+.header h1,
+.header h2{
+  margin-left: 100px;
+  text-align: center;
+}
+
+.header h1{ margin: 0; font-size: 26px; }
+.header h2{ margin: 5px 0; font-size: 18px; font-weight: normal; }
+
+/* Coordonnées */
+.contact{
+  text-align: left;
+  margin-top: 20px;
+  font-size: 14px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px; 
+  align-items: center;
+  justify-content: center;
+}
+.contact i{
+  color: rgb(227, 227, 227);
+  font-size: 14px;
+}
+
+.contact span{ color: #fff; }
+
+/* Liens cliquables (contact et footer) */
+.contact a,
+.footer a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact a:hover,
+.footer a:hover{ text-decoration: underline; }
+
+/* Mise en page principale (sidebar + contenu) */
+.main{ display: flex; }
+
+.sidebar{
+  width: 30%;
+  padding: 20px;
+  background: rgb(227, 227, 227);
+}
+
+.langue,
+.skill{
+  font-weight: bold;
+}
+
+.content{
+  width: 70%;
+  padding: 20px;
+}
+
+/* Titres des sections */
+.sidebar h3,
+.content h3{
+  color: rgb(23, 171, 179);
+  border-bottom: 2px solid rgb(227, 227, 227);
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+
+/* Listes de la sidebar (compétences, qualités, etc.) */
+.sidebar ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0;
+}
+
+/* Cases carrées remplies pour Qualités & Intérêts */
+ul.qualites li,
+ul.interet li{
+  position: relative;
+  padding-left: 22px;
+}
+
+ul.qualites li::before,
+ul.interet li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: rgb(23, 171, 179);
+  border-radius: 2px;
+}
+
+/* Style des étoiles de compétences */
+.stars{
+  color: rgb(23, 171, 179);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+/* Marges et hiérarchie dans les sections */
+.section{
+  margin-bottom: 20px;
+}
+
+.section .item{
+  display: flex;
+  flex-wrap: wrap;                 
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0;
+  border-left: 4px solid transparent;
+  background-color: #fff;
+}
+
+.section .item .date{
+  order: 2;
+  margin-left: auto;               
+  color: rgb(23, 171, 179);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.section .item .formation,
+.section .item .entreprise{
+  order: 3;                         
+  flex: 0 0 100%;                  
+  display: block;
+  font-size: small;
+  font-style: italic;
+  color: #555;
+  margin-top: 3px;
+}
+
+/* Effet au survol */
+.section .item:hover{
+  border-left: 4px solid rgb(23, 171, 179);  
+  background-color: rgb(227, 227, 227);       
+}
+
+/* Date alignée à droite */
+.date{
+  color: rgb(23, 171, 179);
+  font-size: 13px;
+  margin-left: 15px;
+  white-space: nowrap;
+}
+
+/* Nom de l’entreprise et formation (italique) */
+.entreprise,
+.formation{
+  font-size: small;
+  font-style: italic;
+  color: #555;
+}
+
+.profil{
+  text-align: justify;  
+  text-indent: 30px;     
+  margin-bottom: 20px;
+}
+
+/* Pied de page */
+.footer{
+  background: rgb(23, 171, 179);
+  text-align: center;
+  padding: 15px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.footer i{
+  margin-right: 6px;
+  color: #fff;
+  vertical-align: middle;
+}
+
+/* Balise <time> (dates de formations) */
+time{
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.social-icons a{
+  display: inline-block;
+  margin: 0 8px;
+  transition: opacity 0.3s ease;
+}
+
+.social-icons a:hover{
+  opacity: 0.7;  
+}
